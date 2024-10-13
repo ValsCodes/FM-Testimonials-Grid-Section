@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-.barlow-semi-500 {
+.barlow-semi-500, .quote-text, .job-text, .name-text {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-.barlow-semi-600 {
+.barlow-semi-600, .title-text {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -17,41 +17,162 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: repeat(2, 16.625rem);
+  grid-template-rows: 17.625rem 16.625rem;
   grid-template-columns: repeat(4, 15.9375rem);
   row-gap: 1.5rem;
   column-gap: 1.875rem;
-  margin: 10.3125rem;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+.flex-container img {
+  margin-right: 1.0625rem;
+}
+
+.flex-col-container {
+  display: flex;
+  flex-direction: column;
+}
+.flex-col-container p {
+  margin: 0;
+}
+
+.name-text {
+  font-size: 0.8125rem;
+  line-height: 0.8125rem;
+  color: white;
+}
+
+.job-text {
+  opacity: 50%;
+  font-size: 0.6875rem;
+  line-height: 0.6875rem;
+  color: white;
+}
+
+.title-text {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: white;
+}
+
+.quote-text {
+  opacity: 70%;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: #CFCFCF;
 }
 
 .item {
   border-radius: 0.5rem;
   box-shadow: 2.5rem 3.75rem 3.125rem -2.9375rem rgba(72, 85, 106, 0.25);
+  padding: 1.625rem 2rem 2rem 2rem;
+}
+.item img {
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 .item--1 {
-  background-color: #733fc8;
+  background-color: #733FC8;
   grid-column: span 2;
+  z-index: 1;
+}
+.item--1 p {
+  max-width: 29.75rem;
+}
+.item--1 svg {
+  z-index: -1;
+  position: absolute;
+  margin-left: 20.25rem;
+  margin-top: -1.625rem;
+}
+.item--1 img {
+  border-width: 0.125rem;
+  border-color: #A775F1;
+  border-style: solid;
 }
 .item--2 {
   background-color: #48556A;
+}
+.item--2 p {
+  max-width: 11.9375rem;
 }
 .item--3 {
   background-color: white;
   grid-row: span 2;
 }
+.item--3 p {
+  max-width: 11.9375rem;
+}
+.item--3 .title-text,
+.item--3 .quote-text,
+.item--3 .name-text,
+.item--3 .job-text {
+  color: #48556A;
+}
 .item--4 {
   background-color: white;
+}
+.item--4 p {
+  max-width: 11.9375rem;
+}
+.item--4 .title-text,
+.item--4 .quote-text,
+.item--4 .name-text,
+.item--4 .job-text {
+  color: #48556A;
 }
 .item--5 {
   background-color: #19202D;
   grid-column: span 2;
+}
+.item--5 p {
+  max-width: 29.75rem;
+}
+.item--5 .title-text {
+  color: #ECF2F8;
+}
+.item--5 img {
+  border-width: 0.125rem;
+  border-color: #733FC8;
+  border-style: solid;
 }
 
 @media (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 1.5rem;
+    max-width: 20.4375rem;
+    margin: 10% auto 10% auto;
+  }
+  .item p {
+    max-width: 16.4375rem;
+  }
+  .item--1 {
+    order: 1;
+  }
+  .item--1 svg {
+    margin-left: 10.4375rem;
+  }
+  .item--2 {
+    order: 2;
+  }
+  .item--3 {
+    order: 5;
+  }
+  .item--4 {
+    order: 3;
+  }
+  .item--5 {
+    order: 4;
   }
 }
 
